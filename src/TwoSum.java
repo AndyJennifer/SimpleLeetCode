@@ -18,6 +18,9 @@ class TwoSum {
         twoSum(nums, 10);
     }
 
+    /**
+     * 时间复杂度（O2）
+     */
     public static int[] twoSum(int[] nums, int target) {
         int[] index = new int[2];
         for (int i = 0; i < nums.length - 1; i++) {
