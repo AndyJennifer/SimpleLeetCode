@@ -15,7 +15,7 @@ import java.util.Set;
 public class LongestSubstring {
 
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("vjovnhuuxtdalgjccpruzqkysmwrecsalhvaqsvnlynygybinufpnpnfejyinskybgzrywelutkctnkjhryujnbpwbxl"));
+        System.out.println(soluation2("vjovnhuuxtdalgjccpruzqkysmwrecsalhvaqsvnlynygybinufpnpnfejyinskybgzrywelutkctnkjhryujnbpwbxl"));
     }
 
     /**
@@ -44,11 +44,22 @@ public class LongestSubstring {
     }
 
     /**
-     * 第二种解决方法
+     * 第二种解决方法 aba 移除a 剩下ba 则最大长度为ba 2
      */
     public static int soluation2(String s) {
-
-        return 0;
+        int length = s.length();
+        int i = 0, j = 0;
+        int max = 0;
+        Set<Character> set = new HashSet<>();
+        while (i < length && j < length) {
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                max = Math.max(max, j - i);
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return max;
     }
 
 
