@@ -32,15 +32,11 @@ public class ReverserInteger {
      * 分析：一般我们取数字的某一位都是取余数，判断某个数有几位除以10最后除数为0就知道了
      */
     private static int reverse(int x) {
-        int  val = 0;
+        long val = 0;//用Long 是因为怕越界
         while (x != 0) {
-//            val = x % 10;//计算余数
-//            val = val * 10 + val;//上次的余数*10+现在的余数 为颠倒后的数
-            //合并为
-            val = val * 10 + x % 10;
+            val = val * 10 + x % 10;//上次的余数*10+现在的余数 为颠倒后的数 使用long 就不会怕越界
             x = x / 10;//while循环能走几次，代表数有多少位。
         }
-        return val;
-
+        return (val > Integer.MAX_VALUE || val < Integer.MIN_VALUE) ? 0 : (int) val;
     }
 }
