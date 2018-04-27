@@ -15,7 +15,7 @@ import java.util.Set;
 public class LongestSubstring {
 
     public static void main(String[] args) {
-        System.out.println(soluation2("vjovnhuuxtdalgjccpruzqkysmwrecsalhvaqsvnlynygybinufpnpnfejyinskybgzrywelutkctnkjhryujnbpwbxl"));
+        System.out.println(solution2("vjovnhuuxtdalgjccpruzqkysmwrecsalhvaqsvnlynygybinufpnpnfejyinskybgzrywelutkctnkjhryujnbpwbxl"));
     }
 
     /**
@@ -46,7 +46,7 @@ public class LongestSubstring {
     /**
      * 第二种解决方法 aba 移除a 剩下ba 则最大长度为ba 2
      */
-    public static int soluation2(String s) {
+    public static int solution2(String s) {
         int length = s.length();
         int i = 0, j = 0;
         int max = 0;
