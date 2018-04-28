@@ -25,7 +25,12 @@ public class MedianOfTwoSortedArrays {
 
     }
 
+    /**
+     * 分析：首先中位数是算法，则当N为奇数时，中位数角标为n+1/2；当N为偶数时中位数是 n/2 与 (n/2)+1的和的一半
+     * 分析：算法复杂度有那么小，所以不能走任何排序
+     */
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+
         return 0;
     }
 }
