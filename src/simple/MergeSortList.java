@@ -8,21 +8,13 @@ package simple;
 
 public class MergeSortList {
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
 
     public static void main(String[] args) {
         ListNode b = new ListNode(1);
         ListNode b1 = new ListNode(2);
-//        ListNode b2 = new ListNode(3);
-//        ListNode b3 = new ListNode(4);
+//        domain.ListNode b2 = new domain.ListNode(3);
+//        domain.ListNode b3 = new domain.ListNode(4);
         b.next = b1;
 //        b1.next = b2;
 //        b2.next = b3;
@@ -30,8 +22,8 @@ public class MergeSortList {
 
         ListNode a = new ListNode(5);
         ListNode a1 = new ListNode(6);
-//        ListNode a2 = new ListNode(7);
-//        ListNode a3 = new ListNode(8);
+//        domain.ListNode a2 = new domain.ListNode(7);
+//        domain.ListNode a3 = new domain.ListNode(8);
 
         a.next = a1;
 //        a1.next = a2;

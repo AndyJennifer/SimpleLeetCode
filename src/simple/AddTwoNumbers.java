@@ -1,5 +1,7 @@
 package simple;
 
+import domain.ListNode;
+
 /**
  * Author:  andy.xwt
  * Date:    2017/12/28 11:24
@@ -17,15 +19,6 @@ package simple;
 
 
 class AddTwoNumbers {
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public static void main(String[] args) {
         ListNode a = new ListNode(9);
