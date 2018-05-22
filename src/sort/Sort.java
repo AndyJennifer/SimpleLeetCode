@@ -10,7 +10,7 @@ public class Sort {
 
     public static void main(String[] args) {
         int a[] = new int[]{11, 3, 7, 1, 8};
-        insertSort(a);
+        shellSort(a);
         printArray(a);
     }
 
@@ -58,6 +58,30 @@ public class Sort {
             }
             array[in] = temp;//空位设置数据
         }
+    }
+
+    /**
+     * 希尔排序 N LOG N 2
+     */
+    public static void shellSort(int array[]) {
+        int inner, outer;
+        int h = 1;
+        while (h <= array.length / 3) {//找到最大的h
+            h = h * 3 + 1;
+        }
+        while (h > 0) {//逐渐减少h,直至h=1;
+            for (outer = h; outer < array.length; outer++) {//区间增量排序
+                int temp = array[outer];
+                inner = outer;
+                while (inner > h - 1 && array[inner - h] > temp) {
+                    array[inner] = array[inner - h];
+                    inner -= h;//按照步长移动
+                }
+                array[inner] = temp;
+            }
+            h = (h - 1) / 3;
+        }
+
     }
 
     /**
