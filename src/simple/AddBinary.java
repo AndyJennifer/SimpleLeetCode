@@ -26,7 +26,7 @@ public class AddBinary {
             int aCurrent = i >= 0 ? a.charAt(i) - '0' : 0;
             int bCurrent = j >= 0 ? b.charAt(j) - '0' : 0;
             int reminder = (aCurrent + bCurrent + divi) % 2;
-            divi = (aCurrent + bCurrent + divi) / 2;
+            divi = (aCurrent + bCurrent + divi) / 2;//计算余数
             sb.append(reminder);
             i--;
             j--;

@@ -19,7 +19,7 @@ public class palindromeNumber {
         long val = 0;
         while (x != 0) {
             val = val * 10 + x % 10;
-            x = x / 10;
+            x = x / 10;//计算每一位的余数。
         }
         return temp == ((val > Integer.MAX_VALUE || val < Integer.MIN_VALUE) ? 0 : (int) val);
     }

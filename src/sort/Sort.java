@@ -81,6 +81,12 @@ public class Sort {
             }
             h = (h - 1) / 3;
         }
+    }
+
+    /**
+     * 快排
+     */
+    public static void quickSort() {
 
     }
 
