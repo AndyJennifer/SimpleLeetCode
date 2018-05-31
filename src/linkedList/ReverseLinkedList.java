@@ -1,6 +1,6 @@
 package linkedList;
 
-import domain.ListNode;
+import linkedList.domain.ListNode;
 
 /**
  * Author:  andy.xwt

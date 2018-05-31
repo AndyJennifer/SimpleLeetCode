@@ -1,6 +1,6 @@
 package simple;
 
-import domain.ListNode;
+import linkedList.domain.ListNode;
 
 /**
  * Author:  andy.xwt
@@ -15,8 +15,8 @@ public class MergeSortList {
     public static void main(String[] args) {
         ListNode b = new ListNode(1);
         ListNode b1 = new ListNode(2);
-//        domain.ListNode b2 = new domain.ListNode(3);
-//        domain.ListNode b3 = new domain.ListNode(4);
+//        linkedList.domain.ListNode b2 = new linkedList.domain.ListNode(3);
+//        linkedList.domain.ListNode b3 = new linkedList.domain.ListNode(4);
         b.next = b1;
 //        b1.next = b2;
 //        b2.next = b3;
@@ -24,8 +24,8 @@ public class MergeSortList {
 
         ListNode a = new ListNode(5);
         ListNode a1 = new ListNode(6);
-//        domain.ListNode a2 = new domain.ListNode(7);
-//        domain.ListNode a3 = new domain.ListNode(8);
+//        linkedList.domain.ListNode a2 = new linkedList.domain.ListNode(7);
+//        linkedList.domain.ListNode a3 = new linkedList.domain.ListNode(8);
 
         a.next = a1;
 //        a1.next = a2;

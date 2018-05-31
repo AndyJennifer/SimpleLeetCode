@@ -1,4 +1,4 @@
-package domain;
+package linkedList.domain;
 
 /**
  * Author:  andy.xwt
