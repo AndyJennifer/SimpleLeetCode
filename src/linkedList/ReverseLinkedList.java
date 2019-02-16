@@ -1,6 +1,6 @@
 package linkedList;
 
-import linkedList.domain.ListNode;
+import linkedList.domain.Node;
 
 /**
  * Author:  andy.xwt
@@ -9,41 +9,29 @@ import linkedList.domain.ListNode;
  */
 
 public class ReverseLinkedList {
+
+    private static final int ARRAY[] = new int[]{1, 2, 3, 4, 5};
+
     public static void main(String[] args) {
-        ListNode b = new ListNode(1);
-        ListNode b1 = new ListNode(2);
-        ListNode b2 = new ListNode(3);
-        ListNode b3 = new ListNode(4);
-        ListNode b4 = new ListNode(5);
-        ListNode b5 = new ListNode(6);
-        ListNode b6 = new ListNode(7);
-        ListNode b7 = new ListNode(8);
-        ListNode b8 = new ListNode(9);
-        b.next = b1;
-        b1.next = b2;
-        b2.next = b3;
-        b3.next = b4;
-        b4.next = b5;
-        b5.next = b6;
-        b6.next = b7;
-        b7.next = b8;
-        reverseList(b);
+        Node head = Node.createList(ARRAY);
+        Node reverseHead = reverseList(head);
+        Node.printList(reverseHead);
     }
 
-    public static ListNode reverseList(ListNode head) {
-        ListNode reverseHead = null;
-        ListNode previousNode = null;
-        ListNode currentNode = head;
+    public static Node reverseList(Node head) {
+        Node newHead = new Node(-1);
+        Node currentNode = head.next;
         while (currentNode != null) {
-            ListNode next = currentNode.next;
-            if (next == null) {
-                reverseHead = currentNode;
-            }
-            currentNode.next = previousNode;//当前节点的next节点为上一个节点。
-            previousNode = currentNode;//对上一个节点进行复制
-            currentNode = next;//获取下一个元素
+            //记录下一次将要插入的结点
+            Node nextNode = currentNode.next;
+            //把当前结点插入新链表中
+            currentNode.next = newHead.next;
+            newHead.next = currentNode;
+            //将currentNode指向下一结点
+            currentNode = nextNode;
         }
-        return reverseHead;
+        return newHead;
+
     }
 
 

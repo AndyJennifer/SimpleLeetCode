@@ -1,40 +1,26 @@
 package simple;
 
-import linkedList.domain.ListNode;
+import linkedList.domain.Node;
 
 /**
  * Author:  andy.xwt
  * Date:    2018/5/1 20:10
- * Description:
+ * Description:合并两个有序数组
  */
 
 public class MergeSortList {
 
+    private static final int ARRAY_FIRST[] = new int[]{1, 2, 3, 4, 5};
+    private static final int ARRAY_SECOND[] = new int[]{6, 9, 8, 7, 10};
 
 
     public static void main(String[] args) {
-        ListNode b = new ListNode(1);
-        ListNode b1 = new ListNode(2);
-//        linkedList.domain.ListNode b2 = new linkedList.domain.ListNode(3);
-//        linkedList.domain.ListNode b3 = new linkedList.domain.ListNode(4);
-        b.next = b1;
-//        b1.next = b2;
-//        b2.next = b3;
-
-
-        ListNode a = new ListNode(5);
-        ListNode a1 = new ListNode(6);
-//        linkedList.domain.ListNode a2 = new linkedList.domain.ListNode(7);
-//        linkedList.domain.ListNode a3 = new linkedList.domain.ListNode(8);
-
-        a.next = a1;
-//        a1.next = a2;
-//        a2.next = a3;
-
-        mergeTwoLists(b, a);
+        Node head1 = Node.createList(ARRAY_FIRST);
+        Node head2 = Node.createList(ARRAY_SECOND);
+        mergeTwoLists(head1, head2);
     }
 
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public static Node mergeTwoLists(Node l1, Node l2) {
         if (l1 == null) {
             return l2;
         }

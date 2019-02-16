@@ -1,6 +1,6 @@
 package simple;
 
-import linkedList.domain.ListNode;
+import linkedList.domain.Node;
 
 /**
  * Author:  andy.xwt
@@ -21,19 +21,19 @@ import linkedList.domain.ListNode;
 class AddTwoNumbers {
 
     public static void main(String[] args) {
-        ListNode a = new ListNode(9);
+        Node a = new Node(9);
 
 
-        ListNode b = new ListNode(1);
-        ListNode b1 = new ListNode(9);
-        ListNode b2 = new ListNode(9);
-        ListNode b3 = new ListNode(9);
-        ListNode b4 = new ListNode(9);
-        ListNode b5 = new ListNode(9);
-        ListNode b6 = new ListNode(9);
-        ListNode b7 = new ListNode(9);
-        ListNode b8 = new ListNode(9);
-        ListNode b9 = new ListNode(9);
+        Node b = new Node(1);
+        Node b1 = new Node(9);
+        Node b2 = new Node(9);
+        Node b3 = new Node(9);
+        Node b4 = new Node(9);
+        Node b5 = new Node(9);
+        Node b6 = new Node(9);
+        Node b7 = new Node(9);
+        Node b8 = new Node(9);
+        Node b9 = new Node(9);
         b.next = b1;
         b1.next = b2;
         b2.next = b3;
@@ -47,22 +47,22 @@ class AddTwoNumbers {
         addTwoNumbers(a, b);
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode head = new ListNode(0);
-        ListNode p = l1, q = l2, current = head;
+    public static Node addTwoNumbers(Node l1, Node l2) {
+        Node head = new Node(0);
+        Node p = l1, q = l2, current = head;
         int carry = 0;
         while (p != null || q != null) {
             int a = p != null ? p.val : 0;
             int b = q != null ? q.val : 0;
             int sum = a + b + carry;
             carry = sum / 10;//计算是否进位
-            current.next = new ListNode(sum % 10);//创建新节点
+            current.next = new Node(sum % 10);//创建新节点
             current = current.next;//指向新节点
             if (p != null) p = p.next;
             if (q != null) q = q.next;
         }
         if (carry > 0) {//链表遍历完毕，但是还能进位
-            current.next = new ListNode(carry);
+            current.next = new Node(carry);
         }
         return head.next;
     }
