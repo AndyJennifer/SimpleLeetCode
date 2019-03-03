@@ -16,6 +16,7 @@ public class reverseString {
 
     public static void main(String[] args) {
 
+        reverseString(new char[]{'h','e','l','l','o'});
 
     }
 
