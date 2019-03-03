@@ -1,4 +1,4 @@
-package simple;
+package simple.str;
 
 /**
  * Author:  andy.xwt
