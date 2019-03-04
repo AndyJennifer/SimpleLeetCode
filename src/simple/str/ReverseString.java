@@ -12,7 +12,7 @@ package simple.str;
  * 你可以假设数组中的所有字符都是 ASCII 码表中的可打印字符。
  */
 
-public class reverseString {
+public class ReverseString {
 
     public static void main(String[] args) {
 
