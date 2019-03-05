@@ -10,7 +10,7 @@ public class Sort {
 
     public static void main(String[] args) {
         int a[] = new int[]{11, 3, 7, 1, 8};
-        shellSort(a);
+//        shellSort(a);
         printArray(a);
     }
 
@@ -18,14 +18,13 @@ public class Sort {
      * 冒泡排序 最大放在右边，两两交换
      */
     public static void bubbleSort(int array[]) {
-        for (int i = array.length - 1; i > 1; i--) {
-            for (int j = 0; j < i; j++) {
+        for (int i = array.length - 1; i > 1; i--) {//外层控制最大循环次数,为n-2次
+            for (int j = 0; j < i; j++) {//里层依次向右移动，依次判断是否需要对调
                 if (array[j] > array[j + 1]) {
                     swap(array, j, j + 1);
                 }
             }
         }
-
     }
 
     /**
@@ -33,9 +32,9 @@ public class Sort {
      */
     public static void choseSort(int array[]) {
         int min;
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {//外层控制最大循环次数,为n-1次
             min = array[i];
-            for (int j = i + 1; j < array.length; j++) {//获取最小的值
+            for (int j = i + 1; j < array.length; j++) {//里层依次向左移动，获取最小的值
                 if (min > array[j]) {
                     min = array[j];
                     swap(array, i, j);//进行交换值
@@ -49,7 +48,7 @@ public class Sort {
      */
     public static void insertSort(int array[]) {
         int in, out;
-        for (out = 0; out < array.length; out++) {
+        for (out = 0; out < array.length; out++) {//外层最大循环次数为n次，
             int temp = array[out];//记录要移动的值
             in = out;
             while (in > 0 && array[in - 1] >= temp) {//如果下一个比上一个大
@@ -106,6 +105,7 @@ public class Sort {
         }
         System.out.println(sb.toString());
     }
+
 
 
 }
