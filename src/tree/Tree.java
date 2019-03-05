@@ -139,4 +139,7 @@ public class Tree {
         return last;
     }
 
+    public Node getRoot() {
+        return root;
+    }
 }
