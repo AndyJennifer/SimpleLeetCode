@@ -1,4 +1,4 @@
-package medium;
+package medium.array;
 
 /**
  * Author:  andy.xwt

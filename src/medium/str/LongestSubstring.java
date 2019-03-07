@@ -1,4 +1,4 @@
-package medium;
+package medium.str;
 
 import java.util.HashSet;
 import java.util.Set;

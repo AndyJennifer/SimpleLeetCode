@@ -10,7 +10,7 @@ public class Sort {
 
     public static void main(String[] args) {
         int a[] = new int[]{11, 3, 7, 1, 8};
-//        shellSort(a);
+        shellSort(a);
         printArray(a);
     }
 
@@ -98,6 +98,9 @@ public class Sort {
         array[two] = temp;
     }
 
+    /**
+     * 打印数组中的数据
+     */
     private static void printArray(int array[]) {
         StringBuffer sb = new StringBuffer();
         for (int i : array) {
