@@ -1,4 +1,4 @@
-package simple;
+package simple.link;
 
 import linkedList.domain.Node;
 

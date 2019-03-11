@@ -1,4 +1,4 @@
-package linkedList;
+package medium.link;
 
 import linkedList.domain.Node;
 

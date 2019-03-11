@@ -1,5 +1,7 @@
 package sort;
 
+import utils.ArrayUtils;
+
 /**
  * Author:  andy.xwt
  * Date:    2018/4/27 10:52
@@ -11,7 +13,7 @@ public class Sort {
     public static void main(String[] args) {
         int a[] = new int[]{11, 3, 7, 1, 8};
         shellSort(a);
-        printArray(a);
+        ArrayUtils.printArray(a);
     }
 
     /**
@@ -21,7 +23,7 @@ public class Sort {
         for (int i = array.length - 1; i > 1; i--) {//外层控制最大循环次数,为n-2次
             for (int j = 0; j < i; j++) {//里层依次向右移动，依次判断是否需要对调
                 if (array[j] > array[j + 1]) {
-                    swap(array, j, j + 1);
+                    ArrayUtils.swap(array, j, j + 1);
                 }
             }
         }
@@ -37,7 +39,7 @@ public class Sort {
             for (int j = i + 1; j < array.length; j++) {//里层依次向左移动，获取最小的值
                 if (min > array[j]) {
                     min = array[j];
-                    swap(array, i, j);//进行交换值
+                    ArrayUtils.swap(array, i, j);//进行交换值
                 }
             }
         }
@@ -88,27 +90,6 @@ public class Sort {
     public static void quickSort() {
 
     }
-
-    /**
-     * 交换数组中的数据
-     */
-    private static void swap(int array[], int one, int two) {
-        int temp = array[one];
-        array[one] = array[two];
-        array[two] = temp;
-    }
-
-    /**
-     * 打印数组中的数据
-     */
-    private static void printArray(int array[]) {
-        StringBuffer sb = new StringBuffer();
-        for (int i : array) {
-            sb.append("[+" + i + "]->");
-        }
-        System.out.println(sb.toString());
-    }
-
 
 
 }
