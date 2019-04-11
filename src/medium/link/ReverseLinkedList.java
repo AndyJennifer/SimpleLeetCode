@@ -1,6 +1,6 @@
 package medium.link;
 
-import simple.link.Node;
+import simple.link.ListNode;
 
 /**
  * Author:  andy.xwt
@@ -13,17 +13,17 @@ public class ReverseLinkedList {
     private static final int ARRAY[] = new int[]{1, 2, 3, 4, 5};
 
     public static void main(String[] args) {
-        Node head = Node.createList(ARRAY);
-        Node reverseHead = reverseList(head);
-        Node.printList(reverseHead);
+        ListNode head = ListNode.createList(ARRAY);
+        ListNode reverseHead = reverseList(head);
+        ListNode.printList(reverseHead);
     }
 
-    public static Node reverseList(Node head) {
-        Node newHead = new Node(-1);
-        Node currentNode = head.next;
+    public static ListNode reverseList(ListNode head) {
+        ListNode newHead = new ListNode(-1);
+        ListNode currentNode = head.next;
         while (currentNode != null) {
             //记录下一次将要插入的结点
-            Node nextNode = currentNode.next;
+            ListNode nextNode = currentNode.next;
             //把当前结点插入新链表中
             currentNode.next = newHead.next;
             newHead.next = currentNode;

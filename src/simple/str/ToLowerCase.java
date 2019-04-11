@@ -13,11 +13,16 @@ public class ToLowerCase {
         System.out.println(toLower("FUCK"));
     }
 
+    /**
+     * 大写字母范围在65~90
+     * 小写字母范围在97~122
+     * 记住大写在前，小写在后
+     */
     public static String toLower(String str) {
         char[] chars = str.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] >= 65 && chars[i] <= 90) {
-                int b = chars[i] + 32;
+                int b = chars[i] + 32;//这里的32为差值
                 chars[i] = (char) b;
             }
         }

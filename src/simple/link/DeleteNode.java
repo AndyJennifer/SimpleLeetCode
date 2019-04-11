@@ -32,8 +32,8 @@ package simple.link;
 public class DeleteNode {
 
     public static void main(String[] args) {
-        Node listNode = Node.createList(new int[]{4, 5, 1, 9});
-        deleteNode(new Node(5));
+        ListNode listNode = ListNode.createList(new int[]{4, 5, 1, 9});
+        deleteNode(new ListNode(5));
     }
 
     /**
@@ -43,7 +43,7 @@ public class DeleteNode {
      * 相反，我们必须将想要删除的节点的值替换为它后面节点中的值，然后删除它之后的节点。
      * 因为我们知道要删除的节点不是列表的末尾，所以我们可以保证这种方法是可行的。
      */
-    public static void deleteNode(Node node) {
+    public static void deleteNode(ListNode node) {
         //将当前要删除的节点的值，修改为当前节点的下一节点的值
         node.val = node.next.val;
         //将当前要删除的next节点，执行当前节点的下下节点。

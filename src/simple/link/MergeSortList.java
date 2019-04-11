@@ -1,5 +1,8 @@
 package simple.link;
 
+import static simple.link.ListNode.ARRAY_1To5;
+import static simple.link.ListNode.ARRAY_6To10;
+
 /**
  * Author:  andy.xwt
  * Date:    2018/5/1 20:10
@@ -8,17 +11,14 @@ package simple.link;
 
 public class MergeSortList {
 
-    private static final int ARRAY_FIRST[] = new int[]{1, 2, 3, 4, 5};
-    private static final int ARRAY_SECOND[] = new int[]{6, 9, 8, 7, 10};
-
 
     public static void main(String[] args) {
-        Node head1 = Node.createList(ARRAY_FIRST);
-        Node head2 = Node.createList(ARRAY_SECOND);
+        ListNode head1 = ListNode.createList(ARRAY_1To5);
+        ListNode head2 = ListNode.createList(ARRAY_6To10);
         mergeTwoLists(head1, head2);
     }
 
-    public static Node mergeTwoLists(Node l1, Node l2) {
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
         }
@@ -34,5 +34,4 @@ public class MergeSortList {
         }
     }
 
-    //
 }

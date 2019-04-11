@@ -6,15 +6,18 @@ package simple.link;
  * Description:
  */
 
-public class Node {
+public class ListNode {
+
+    public static final int[] ARRAY_1To5 = new int[]{1, 2, 3, 4, 5};
+    public static final int[] ARRAY_6To10 = new int[]{6, 9, 8, 7, 10};
 
     public int val = -1;
-    public Node next;
+    public ListNode next;
 
-    public Node() {
+    public ListNode() {
     }
 
-    public Node(int val) {
+    public ListNode(int val) {
         this.val = val;
     }
 
@@ -25,11 +28,11 @@ public class Node {
      * @param length 整形数组取值的范围
      * @return 返回当前链表头结点
      */
-    public static Node createList(int array[], int length) {
-        Node header = new Node();
-        Node curNode = null;
+    public static ListNode createList(int[] array, int length) {
+        ListNode header = new ListNode();
+        ListNode curNode = null;
         for (int i = 0; i < length; i++) {
-            Node currentNode = new Node();
+            ListNode currentNode = new ListNode();
             currentNode.val = array[i];
             if (header.next == null) {
                 header.next = currentNode;
@@ -42,16 +45,21 @@ public class Node {
         return header;
     }
 
-    public static Node createList(int array[]) {
+    public static ListNode createList(int[] array) {
         return createList(array, array.length);
     }
 
     /**
      * 打印链表中的数据
      */
-    public static void printList(Node head) {
+    public static void printList(ListNode head) {
         if (head != null) {
-            Node node = head.next;
+            ListNode node;
+            if (head.val != -1) {
+                node = head;
+            } else {
+                node = head.next;
+            }
             while (node != null) {
                 if (node.val != -1) {
                     System.out.println(node.val);
