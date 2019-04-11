@@ -3,7 +3,7 @@ package simple.str;
 /**
  * Author:  andy.xwt`
  * Date:    2019-03-04 17:50
- * Description:
+ * Description:翻转字符串中的单词2
  * 给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。
  * <p>
  * 示例 1:
@@ -17,11 +17,12 @@ public class ReverseString2 {
     public static final String text = "Let's take LeetCode contest";
 
     public static void main(String[] args) {
-
         reverseString(text);
-
     }
 
+    /**
+     * 解题思路：{@link ReverseString2}
+     */
     public static void reverseString(String s) {
         String[] str = s.split(" ");
         StringBuffer sb = new StringBuffer();
@@ -36,7 +37,8 @@ public class ReverseString2 {
                 }
             }
             sb.append(chars);
-            if(i<str.length-1) {
+            //这里是为了添加空格
+            if (i < str.length - 1) {
                 sb.append(" ");
             }
         }
