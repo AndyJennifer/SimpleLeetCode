@@ -28,6 +28,9 @@ public class FindLUSlength {
         findLUSlength("abc", "abc");
     }
 
+    /**
+     * 解题思路：直接判断长度就行了
+     */
     public static int findLUSlength(String a, String b) {
         if (a.equals(b)) {
             return -1;

@@ -1,7 +1,5 @@
 package simple.link;
 
-import linkedList.domain.Node;
-
 /**
  * Author:  andy.xwt
  * Date:    2018/5/1 20:10

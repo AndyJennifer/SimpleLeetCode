@@ -1,4 +1,4 @@
-package linkedList.domain;
+package simple.link;
 
 /**
  * Author:  andy.xwt

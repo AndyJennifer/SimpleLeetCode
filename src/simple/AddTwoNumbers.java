@@ -1,6 +1,6 @@
 package simple;
 
-import linkedList.domain.Node;
+import simple.link.Node;
 
 /**
  * Author:  andy.xwt
