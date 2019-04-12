@@ -8,13 +8,13 @@ package tree;
 
 public class Tree {
 
-    private Node root;
+    private TreeNode root;
 
     /**
      * 根据key查找数据
      */
-    public Node find(int key) {
-        Node current = root;
+    public TreeNode find(int key) {
+        TreeNode current = root;
         while (current.intData != key) {
             if (key < current.intData) {//如果比当前节点小，则遍历当前节点的左节点
                 current = current.leftChild;
@@ -32,14 +32,14 @@ public class Tree {
      * 添加数据
      */
     public void insert(int key, double data) {
-        Node newNode = new Node();
+        TreeNode newNode = new TreeNode();
         newNode.intData = key;
         newNode.doubleData = data;
         if (root == null) {//如果当前根节点为null,则新添加的节点为根节点
             root = newNode;
         } else {
-            Node current = root;
-            Node parent;//记录遍历时的父节点，
+            TreeNode current = root;
+            TreeNode parent;//记录遍历时的父节点，
             while (true) {
                 parent = current;
                 if (key < current.intData) {
@@ -68,7 +68,7 @@ public class Tree {
      * 2.访问这个节点
      * 3.调用自身来遍历节点的右子树
      */
-    public void inOrder(Node localRoot) {
+    public void inOrder(TreeNode localRoot) {
         if (localRoot != null) {
             inOrder(localRoot.leftChild);
             System.out.println(localRoot.intData);
@@ -83,7 +83,7 @@ public class Tree {
      * 2.调用自身来遍历节点的左子树
      * 3.调用自身来遍历节点的右子树
      */
-    public void preOrder(Node localRoot) {
+    public void preOrder(TreeNode localRoot) {
         if (localRoot != null) {
             System.out.println(localRoot.intData);
             preOrder(localRoot.leftChild);
@@ -98,7 +98,7 @@ public class Tree {
      * 2.调用自身来遍历节点的右子树
      * 3.访问这个节点
      */
-    public void postOrder(Node localRoot) {
+    public void postOrder(TreeNode localRoot) {
         if (localRoot != null) {
             preOrder(localRoot.leftChild);
             preOrder(localRoot.rightChild);
@@ -116,8 +116,8 @@ public class Tree {
     /**
      * 获取最小值的节点
      */
-    public Node miniMum() {
-        Node current, last = null;
+    public TreeNode miniMum() {
+        TreeNode current, last = null;
         current = root;
         while (current != null) {
             last = current;
@@ -129,8 +129,8 @@ public class Tree {
     /**
      * 获取最大值的节点
      */
-    public Node maxMum() {
-        Node current, last = null;
+    public TreeNode maxMum() {
+        TreeNode current, last = null;
         current = root;
         while (current != null) {
             last = current;
@@ -139,7 +139,7 @@ public class Tree {
         return last;
     }
 
-    public Node getRoot() {
+    public TreeNode getRoot() {
         return root;
     }
 }

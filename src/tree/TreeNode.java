@@ -11,9 +11,9 @@ package tree;
  * 二叉树的特点：左节点的值比父节点的小，右节点的值比父节点的大
  */
 
-public class Node {
+public class TreeNode {
     int intData;//作为key查找数据
     double doubleData;
-    Node leftChild;
-    Node rightChild;
+    TreeNode leftChild;
+    TreeNode rightChild;
 }
