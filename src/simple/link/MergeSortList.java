@@ -1,7 +1,9 @@
 package simple.link;
 
-import static simple.link.ListNode.ARRAY_1To5;
-import static simple.link.ListNode.ARRAY_6To10;
+import domain.ListNode;
+
+import static domain.ListNode.ARRAY_1To5;
+import static domain.ListNode.ARRAY_6To10;
 
 /**
  * Author:  andy.xwt

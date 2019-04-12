@@ -1,4 +1,4 @@
-package tree;
+package domain.tree;
 
 /**
  * Author:  andy.xwt

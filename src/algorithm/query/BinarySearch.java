@@ -1,4 +1,4 @@
-package query;
+package algorithm.query;
 
 /**
  * Author:  andy.xwt

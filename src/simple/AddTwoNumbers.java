@@ -1,6 +1,6 @@
 package simple;
 
-import simple.link.ListNode;
+import domain.ListNode;
 
 /**
  * Author:  andy.xwt

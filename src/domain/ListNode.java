@@ -1,4 +1,4 @@
-package simple.link;
+package domain;
 
 /**
  * Author:  andy.xwt

@@ -1,6 +1,6 @@
 package medium.link;
 
-import simple.link.ListNode;
+import domain.ListNode;
 
 /**
  * Author:  andy.xwt

@@ -1,5 +1,7 @@
 package simple.link;
 
+import domain.ListNode;
+
 /**
  * Author:  andy.xwt
  * Date:    2019-04-11 22:25

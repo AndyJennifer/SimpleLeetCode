@@ -1,6 +1,8 @@
 package simple.link;
 
-import static simple.link.ListNode.ARRAY_1To5;
+import domain.ListNode;
+
+import static domain.ListNode.ARRAY_1To5;
 
 /**
  * Author:  andy.xwt
