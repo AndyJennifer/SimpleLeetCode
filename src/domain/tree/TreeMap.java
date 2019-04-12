@@ -10,12 +10,12 @@ public class TreeMap {
 
     public static void main(String[] args) {
         Tree tree = new Tree();
-        tree.insert(20, 20);
-        tree.insert(10, 10);
-        tree.insert(5, 5);
-        tree.insert(11, 11);
-        tree.insert(19, 19);
-        tree.insert(30, 30);
+        tree.insert(20);
+        tree.insert(10);
+        tree.insert(5);
+        tree.insert(11);
+        tree.insert(19);
+        tree.insert(30);
 
 
         //前序遍历
@@ -29,10 +29,10 @@ public class TreeMap {
 
         //最小节点
         System.out.println("-------");
-        System.out.println(tree.miniMum().intData);
+        System.out.println(tree.miniMum().val);
 
         //最大节点
         System.out.println("-------");
-        System.out.println(tree.maxMum().intData);
+        System.out.println(tree.maxMum().val);
     }
 }

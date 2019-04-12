@@ -12,8 +12,11 @@ package domain.tree;
  */
 
 public class TreeNode {
-    int intData;//作为key查找数据
-    double doubleData;
-    TreeNode leftChild;
-    TreeNode rightChild;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+
+    public TreeNode(int val) {
+        this.val = val;
+    }
 }

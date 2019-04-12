@@ -15,11 +15,11 @@ public class Tree {
      */
     public TreeNode find(int key) {
         TreeNode current = root;
-        while (current.intData != key) {
-            if (key < current.intData) {//如果比当前节点小，则遍历当前节点的左节点
-                current = current.leftChild;
+        while (current.val != key) {
+            if (key < current.val) {//如果比当前节点小，则遍历当前节点的左节点
+                current = current.left;
             } else {
-                current = current.rightChild;//反之遍历当前节点的右节点
+                current = current.right;//反之遍历当前节点的右节点
             }
             if (current == null) {
                 return null;
@@ -31,10 +31,8 @@ public class Tree {
     /**
      * 添加数据
      */
-    public void insert(int key, double data) {
-        TreeNode newNode = new TreeNode();
-        newNode.intData = key;
-        newNode.doubleData = data;
+    public void insert(int data) {
+        TreeNode newNode = new TreeNode(data);
         if (root == null) {//如果当前根节点为null,则新添加的节点为根节点
             root = newNode;
         } else {
@@ -42,17 +40,17 @@ public class Tree {
             TreeNode parent;//记录遍历时的父节点，
             while (true) {
                 parent = current;
-                if (key < current.intData) {
-                    current = current.leftChild;
+                if (newNode.val < current.val) {
+                    current = current.left;
                     //如果当前节点，没有左节点,则新节点为该当前节点的左节点
                     if (current == null) {
-                        parent.leftChild = newNode;
+                        parent.left = newNode;
                         return;
                     }
                 } else {//如果当前节点，没有右节点，则新节点为该当前节点的右节点
-                    current = current.rightChild;
+                    current = current.right;
                     if (current == null) {
-                        parent.rightChild = newNode;
+                        parent.right = newNode;
                         return;
                     }
                 }
@@ -70,9 +68,9 @@ public class Tree {
      */
     public void inOrder(TreeNode localRoot) {
         if (localRoot != null) {
-            inOrder(localRoot.leftChild);
-            System.out.println(localRoot.intData);
-            inOrder(localRoot.rightChild);
+            inOrder(localRoot.left);
+            System.out.println(localRoot.val);
+            inOrder(localRoot.right);
         }
     }
 
@@ -85,9 +83,9 @@ public class Tree {
      */
     public void preOrder(TreeNode localRoot) {
         if (localRoot != null) {
-            System.out.println(localRoot.intData);
-            preOrder(localRoot.leftChild);
-            preOrder(localRoot.rightChild);
+            System.out.println(localRoot.val);
+            preOrder(localRoot.left);
+            preOrder(localRoot.right);
         }
     }
 
@@ -100,9 +98,9 @@ public class Tree {
      */
     public void postOrder(TreeNode localRoot) {
         if (localRoot != null) {
-            preOrder(localRoot.leftChild);
-            preOrder(localRoot.rightChild);
-            System.out.println(localRoot.intData);
+            preOrder(localRoot.left);
+            preOrder(localRoot.right);
+            System.out.println(localRoot.val);
         }
     }
 
@@ -121,7 +119,7 @@ public class Tree {
         current = root;
         while (current != null) {
             last = current;
-            current = current.leftChild;
+            current = current.left;
         }
         return last;
     }
@@ -134,7 +132,7 @@ public class Tree {
         current = root;
         while (current != null) {
             last = current;
-            current = current.rightChild;
+            current = current.right;
         }
         return last;
     }
