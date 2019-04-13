@@ -21,7 +21,7 @@ package simple.array;
 public class MajorityElement {
 
     public static void main(String[] args) {
-        int result = majorityElement(new int[]{2, 2, 1, 1, 1, 2, 2});
+        int result = majorityElement(new int[]{2,2,1,1,1,2,2});
         System.out.println(result);
     }
 
@@ -35,13 +35,13 @@ public class MajorityElement {
     public static int majorityElement(int[] nums) {
         int res = nums[0];
         int count = 0;
-        for (int num : nums) {
-            if (res == num) {
+        for (int i = 0; i < nums.length; i++) {
+            if (res == nums[i]) {
                 count++;
             } else {
                 count--;
                 if (count == 0) {
-                    res = num;
+                    res = nums[i+1];
                 }
             }
         }
