@@ -15,7 +15,8 @@ package simple.array;
 
 public class MaximumSubArray {
     public static void main(String[] args) {
-        maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+//        maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+        solution2(new int[]{-3, -2, -7});
     }
 
     /**
@@ -36,4 +37,20 @@ public class MaximumSubArray {
         return max;
     }
 
+
+    /**
+     * 思路：就是模拟已经算了很多步，
+     */
+    public static int solution2(int[] nums) {
+        int res = nums[0];
+        int sum = 0;
+        for (int num : nums) {
+            if (sum > 0)
+                sum += num;
+            else
+                sum = num;
+            res = Math.max(res, sum);
+        }
+        return res;
+    }
 }
