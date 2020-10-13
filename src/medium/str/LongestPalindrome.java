@@ -89,8 +89,8 @@ class LongestPalindrome {
 
         for (int i = 0; i < len - 1; i++) {
             int oddLen = expandAroundCenter(charArray, i, i);
-            int eventLen = expandAroundCenter(charArray, i, i + 1);
-            int curMax = Math.max(oddLen, eventLen);
+            int evenLen = expandAroundCenter(charArray, i, i + 1);
+            int curMax = Math.max(oddLen, evenLen);
 
             if (curMax > maxLen) {
                 maxLen = curMax;

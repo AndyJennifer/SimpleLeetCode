@@ -17,6 +17,10 @@ import domain.ListNode;
 
 class Day1 {
 
+    ///////////////////////////////////////////////////////////////////////////
+    // 两数之和
+    ///////////////////////////////////////////////////////////////////////////
+
     public static int[] twoSumSolution1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -40,6 +44,10 @@ class Day1 {
         }
         throw new IllegalArgumentException("have no result");
     }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // 两数相加
+    ///////////////////////////////////////////////////////////////////////////
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;
@@ -70,7 +78,9 @@ class Day1 {
         return head;
     }
 
-
+    ///////////////////////////////////////////////////////////////////////////
+    // 无重复字符的最长子串
+    ///////////////////////////////////////////////////////////////////////////
     public static int LongestSubstringSolution1(String s) {
         int max = 0;
         for (int i = 0; i < s.length(); i++) {
