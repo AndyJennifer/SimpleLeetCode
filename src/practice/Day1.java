@@ -1,4 +1,4 @@
-package practice.day1;
+package practice;
 
 import java.util.HashMap;
 import java.util.HashSet;

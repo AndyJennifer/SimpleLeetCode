@@ -1,4 +1,4 @@
-package practice.day2;
+package practice;
 
 /**
  * Author:  andy.xwt
