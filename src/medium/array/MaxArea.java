@@ -3,7 +3,7 @@ package medium.array;
 /**
  * Author:  andy.xwt
  * Date:    2020/10/16 17:37
- * Description: 盛最多水的容器
+ * Description: 11-盛最多水的容器
  * 给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
  * <p>
  * 说明：你不能倾斜容器，且 n 的值至少为 2。
@@ -15,7 +15,7 @@ package medium.array;
  */
 
 
-class MaxArea {
+public class MaxArea {
 
     /**
      * 思路：
@@ -32,7 +32,7 @@ class MaxArea {
      *     - 如果y1>y ，那么 min(x,y1) = x = min(x,y)
      *
      * 因此有：
-     *      min(x,yt)*t1 <min(x,y) *t
+     *      min(x,y1)*t1 <min(x,y) *t
      *
      * 即无论我们怎么移动右指针，得到的容器都小于移动前容器的容量，也就是说，这个左指针对应的数不会作为容器的边界了，
      * 那么我们可以丢弃这个位置，将左指针向右移动一个位置，此时新的左指针与原先的右指针之间的左右位置，才可能作为容器

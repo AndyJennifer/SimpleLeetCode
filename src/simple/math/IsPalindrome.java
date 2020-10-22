@@ -3,7 +3,7 @@ package simple.math;
 /**
  * Author:  andy.xwt
  * Date:    2018/4/28 01:31
- * Description:回文数判断
+ * Description:9-回文数
  */
 
 public class IsPalindrome {

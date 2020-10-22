@@ -19,7 +19,7 @@ package medium.str;
  */
 
 
-class LongestPalindrome {
+public class LongestPalindrome {
 
     /**
      * 暴力解法：枚举所有子串，然后找到最大的回文子串

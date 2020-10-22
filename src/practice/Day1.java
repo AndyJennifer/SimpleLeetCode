@@ -9,9 +9,9 @@ import domain.ListNode;
  * Author:  andy.xwt
  * Date:    2020/10/10 13:29
  * Description:
- * 1-两数之和
- * 2-两数相加
- * 3-无重复字符的最长子串
+ * 1-两数之和 {@link simple.array.TwoSum}
+ * 2-两数相加 {@link simple.link.AddTwoNumbers}
+ * 3-无重复字符的最长子串 {@link medium.str.LongestSubstring}
  */
 
 

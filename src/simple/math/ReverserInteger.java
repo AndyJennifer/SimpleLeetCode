@@ -3,7 +3,7 @@ package simple.math;
 /**
  * Author:  andy.xwt
  * Date:    2018/4/27 19:35
- * Description:
+ * Description:7-整数翻转
  * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
  * <p>
  * 示例 1:

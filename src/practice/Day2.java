@@ -4,9 +4,9 @@ package practice;
  * Author:  andy.xwt
  * Date:    2020/10/11 15:45
  * Description:
- * 5-最长回文子串
- * 7-整数翻转
- * 9-回文数
+ * 5-最长回文子串 {@link medium.str.LongestPalindrome}
+ * 7-整数翻转 {@link simple.math.ReverserInteger}
+ * 9-回文数 {@link simple.math.IsPalindrome}
  */
 
 
