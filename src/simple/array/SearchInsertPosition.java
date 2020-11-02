@@ -11,24 +11,42 @@ package simple.array;
  */
 
 public class SearchInsertPosition {
-    public static void main(String[] args) {
-        searchInsert(new int[]{1, 3, 5, 6}, 2);
-    }
 
     /**
-     * 解法类似插入排序
+     * 在不考虑时间复杂度的基础上，可以直接这么做，时间复杂度O(N)
      */
-    public static int searchInsert(int[] nums, int target) {
-        int in = 0, out;
-        for (out = 0; out < nums.length; out++) {
-            in = out;
-            while (in > 0 && nums[in - 1] >= target) {//如果下一个比上一个大
-                --in;//继续移动
-            }
-            if (in == nums.length - 1 && nums[out] < target) {//判断如果最后一个数字还比他小，则插入最后
-                return nums.length;
+    public static int searchInsertSolution1(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= target) {
+                return i;
             }
         }
-        return in;
+        return nums.length;
+    }
+
+
+    /**
+     * 考虑时间复杂度，那么就可以使用折半法，时间复杂度O(logN)
+     */
+    public static int searchInsertSolution2(int[] nums, int target) {
+        int n = nums.length;
+        int left = 0, right = n - 1, ans = n;
+        while (left <= right) {
+            int mid = ((right - left) >> 1) + left;
+            if (target <= nums[mid]) {
+                //如果当前的数，大于等于当前的值，那么就往下找
+                ans = mid;
+                right = mid - 1;
+            } else {
+                //如果当前的数，比目标值小，那么需要往前找
+                left = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+
+    public static void main(String[] args) {
+        int result = searchInsertSolution2(new int[]{1, 3, 5, 6}, 2);
     }
 }

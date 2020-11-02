@@ -7,7 +7,8 @@ import java.util.Set;
 /**
  * Author:  andy.xwt
  * Date:    2018/5/1 21:10
- * Description:
+ * Description:删除排序数组中的重复项
+ * <p>
  * 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
  * <p>
  * 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
@@ -97,26 +98,6 @@ public class RemoveDuplicates {
             if (nums[i] != nums[j]) {
                 i++;
                 nums[i] = nums[j];//如果数组都是不相同的，nums = [0,1,2],那么就会原地覆盖一次
-            }
-            j++;
-        }
-        return i + 1;
-    }
-
-    /**
-     * 方法4减少了原地覆盖的次数，
-     */
-    public static int removeDuplicates4(int[] nums) {
-        if (nums.length == 0) return 0;
-        int i = 0;
-        int j = 1;
-        while (j < nums.length) {
-            if (nums[i] != nums[j]) {
-                //这里就保证了减少复制的次数
-                if (j - i > 1) {
-                    nums[i] = nums[j];
-                }
-                i++;
             }
             j++;
         }
