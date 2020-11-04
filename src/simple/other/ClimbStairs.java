@@ -46,6 +46,9 @@ public class ClimbStairs {
         if (n == 1) {
             return 1;
         }
+        if (n == 2) {
+            return 2;
+        }
         int first = 1;
         int second = 2;
 
