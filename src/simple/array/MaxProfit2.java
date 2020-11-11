@@ -32,7 +32,7 @@ public class MaxProfit2 {
     /**
      * 解法1 :动态规划
      * <p>
-     * 时间复杂度：O(N2)
+     * 时间复杂度：O(N^2)
      * 空间复杂度:O(1)
      */
     public int maxProfitSolution1(int[] prices) {

@@ -72,7 +72,7 @@ public class LongestPalindrome {
      * 中心位置可能是一个字符，也有可能是两个相邻的字符
      * 记录最长回文字符串的相关变量
      * <p>
-     * 时间复杂度O(N2)
+     * 时间复杂度O(N^2)
      * 空间复杂度0(1)
      */
     public static String solution2(String s) {

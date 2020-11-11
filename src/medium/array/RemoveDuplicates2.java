@@ -26,7 +26,7 @@ public class RemoveDuplicates2 {
      * <p>
      * 思路：在原地修改数组，而最简单的方法就是删除多余的重复项。
      * 对于数组中的每个数字，若出现 2 个以上的重复项，就将多余的重复项从数组列表中删除。
-     * 时间复杂度：O(N2)
+     * 时间复杂度：O(N^2)
      * 空间复杂度:0(1)
      */
     public static int removeDuplicatesSolution1(int[] nums) {
