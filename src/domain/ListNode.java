@@ -21,6 +21,11 @@ public class ListNode {
         this.val = val;
     }
 
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
     /**
      * 创建带头结点的链表，并返回该链表的头结点
      *
