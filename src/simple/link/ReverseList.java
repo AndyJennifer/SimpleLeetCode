@@ -2,12 +2,10 @@ package simple.link;
 
 import domain.ListNode;
 
-import static domain.ListNode.ARRAY_1To5;
-
 /**
  * Author:  andy.xwt
  * Date:    2019-04-11 22:42
- * Description:
+ * Description:反转链表
  * 反转一个单链表。
  * <p>
  * 示例:
@@ -20,35 +18,46 @@ import static domain.ListNode.ARRAY_1To5;
 
 public class ReverseList {
 
-    public static void main(String[] args) {
-        ListNode head = ListNode.createList(ARRAY_1To5);
-        ListNode re = reverseList(head);
-        ListNode.printList(re);
+
+    /**
+     * 解题思路：双指针
+     * 首先定义一个cur指针，指向头结点，再定义一个pre指针，初始化为null。
+     * 然后就要开始反转了，首先要把 cur->next 节点用tmp指针保存一下，也就是保存一下这个节点。
+     * 为什么要保存一下这个节点呢，因为接下来要改变 cur->next 的指向了，将cur->next 指向pre ，此时已经反转了第一个节点了。
+     * 接下来，就是循环走如下代码逻辑了，继续移动pre和cur指针。
+     * 最后，cur 指针已经指向了null，循环结束，链表也反转完毕了。 此时我们return pre指针就可以了，pre指针就指向了新的头结点。
+     * 时间复杂度:O(N)
+     * 空间复杂度:O(1)
+     */
+    public ListNode reverseListSolution1(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode cur = head;
+        ListNode pre = null;
+        while (cur != null) {
+            ListNode temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
+
     }
 
     /**
-     * 解题思路：迭代的方式
-     * 在遍历列表时，将当前节点的 next 指针改为指向前一个元素。由于节点没有引用其上一个节点，
-     * 因此必须事先存储其前一个元素。在更改引用之前，还需要另一个指针来存储下一个节点。
-     * 不要忘记在最后返回新的头引用！
+     * 解法2：递归
+     * 思路
      */
-    public static ListNode reverseList(ListNode head) {
-
-        ListNode curr = head;
-        ListNode prev = null;
-        while (curr != null) {
-            //第一步
-            ListNode nextTemp = curr.next;
-            //第二步
-            curr.next = prev;
-            //第三步
-            prev = curr;
-            //第四步
-            curr = nextTemp;
-
-            //14步其实是在遍历链表中的节点，并用nextTemp指向当前遍历的节点的下一节点
-            //23步就是插入新链表的一个过程。
+    public ListNode reverseListSolution2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
         }
-        return prev;
+        ListNode p = reverseListSolution2(head.next);
+        head.next.next = head;
+        head.next = null;
+        return p;
     }
+
+
 }
