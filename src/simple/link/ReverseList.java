@@ -36,9 +36,11 @@ public class ReverseList {
         ListNode cur = head;
         ListNode pre = null;
         while (cur != null) {
+            //用temp 记录当前节点的下一个节点。
             ListNode temp = cur.next;
             cur.next = pre;
             pre = cur;
+            //将当前节点，赋值给temp,
             cur = temp;
         }
         return pre;
@@ -47,14 +49,17 @@ public class ReverseList {
 
     /**
      * 解法2：递归
-     * 思路
+     * 思路：方向思维，如果需要将链表翻转，那么nk+1 的下一个节点应该是nk，递归可以参考{@link remind.ReversePrintListNode}
+     * 也就是nk.next.next = nk
      */
     public ListNode reverseListSolution2(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
         ListNode p = reverseListSolution2(head.next);
+        //nk.next.next =nk
         head.next.next = head;
+        //这里注意需要将next置为null
         head.next = null;
         return p;
     }

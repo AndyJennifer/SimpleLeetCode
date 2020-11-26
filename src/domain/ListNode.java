@@ -34,17 +34,17 @@ public class ListNode {
      * @return 返回当前链表头结点
      */
     public static ListNode createList(int[] array, int length) {
-        ListNode header = new ListNode();
+        ListNode header = null;
         ListNode curNode = null;
         for (int i = 0; i < length; i++) {
-            ListNode currentNode = new ListNode();
-            currentNode.val = array[i];
-            if (header.next == null) {
-                header.next = currentNode;
-                curNode = currentNode;
+            if (header == null) {
+                header = new ListNode();
+                header.val = array[i];
+                curNode = header;
             } else {
-                curNode.next = currentNode;
-                curNode = currentNode;
+                ListNode newNode = new ListNode(array[i]);
+                curNode.next = newNode;
+                curNode = newNode;
             }
         }
         return header;
