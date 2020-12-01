@@ -61,13 +61,17 @@ public class Fib {
         if (N <= 1) {
             return N;
         }
-        int cache[] = new int[N + 1];
-        cache[1] = 1;
-        for (int i = 2; i <= N; i++) {
-            cache[i] = cache[i - 1] + cache[i - 2];
+        if (N == 2) {
+            return 1;
+        }
+        int dp[] = new int[N + 1];
+        dp[1] = 1;
+        dp[2] = 1;
+        for (int i = 3; i <= N; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
 
-        return cache[N];
+        return dp[N];
 
 
     }

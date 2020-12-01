@@ -105,11 +105,11 @@ public class LongestPalindrome {
 
     /**
      * 假定 left 为中间位置向两边扩散
-     *
+     * <p>
      * a        b       b       a
-     *         left right
+     * left right
      * a         b           a
-     *      left right
+     * left right
      */
     private static int expandAroundCenter(char[] charArray, int left, int right) {
         //当left = right 的时候，回文中心是一个字符，回文串的长度是奇数
@@ -132,6 +132,8 @@ public class LongestPalindrome {
 
     /**
      * 动态规划，回文字符串去掉头尾，在该字符串长度大于2的情况下，子串仍然也是回文串
+     * 时间复杂度：O(n^2)
+     * 空间复杂度：O(n^2)
      */
     public static String solution3(String s) {
 
@@ -144,7 +146,7 @@ public class LongestPalindrome {
         //用于记录最长回文子串的初始下标
         int begin = 0;
 
-        //dp[i][j] 表示 s[i...j] 是否是回文串（左闭又闭)
+        //dp[i][j] 表示 s[i...j] 是否是回文串（左闭右闭)
         boolean dp[][] = new boolean[len][len];
         for (int i = 0; i < len; i++) {
             //单个字符一定是回文串
@@ -153,7 +155,7 @@ public class LongestPalindrome {
         char[] charArray = s.toCharArray();
 
         for (int j = 1; j < len; j++) {
-            for (int i = 0; i < j; j++) {
+            for (int i = 0; i < j; i++) {
                 //字符串头尾不相等，则该字符串不为回文字符串
                 if (charArray[i] != charArray[j]) {
                     dp[i][j] = false;
@@ -175,6 +177,34 @@ public class LongestPalindrome {
 
         }
         return s.substring(begin, begin + maxLen);
+    }
+
+
+    public String solution4(String s) {
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+        String ans = "";
+        //这里斜着遍历，是因为获取dp[i][j] = dp[i+1][j-1] 。
+        for (int k = 0; k < n; ++k) {
+            for (int i = 0; i + k < n; ++i) {
+                int j = i + k;
+                //如果是单个字符，那么肯定是回文串
+                if (k == 0) {
+                    dp[i][j] = true;
+                } else if (k == 1) {
+                    //如果长度为2，那么是否是回文串与首位两个字符串有关
+                    dp[i][j] = (s.charAt(i) == s.charAt(j));
+                } else {
+                    //如果长度大于2，那么是否为回文串，与当前收尾及上个dp[i+1][j-1]有关
+                    dp[i][j] = (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1]);
+                }
+                //如果是回文串，那么获取长度如果比之前的大，那么就替换
+                if (dp[i][j] && k + 1 > ans.length()) {
+                    ans = s.substring(i, i + k + 1);
+                }
+            }
+        }
+        return ans;
     }
 
 }
