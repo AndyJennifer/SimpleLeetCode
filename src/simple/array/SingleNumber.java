@@ -19,13 +19,7 @@ package simple.array;
  * 输入: [4,1,2,1,2]
  * 输出: 4
  */
-
 public class SingleNumber {
-
-    public static void main(String[] args) {
-        int result = singleNumber(new int[]{2, 2, 1});
-        System.out.println(result);
-    }
 
     /**
      * 解题思路：
@@ -38,6 +32,9 @@ public class SingleNumber {
      * var a = [2,3,2,4,4]
      * <p>
      * 2 ^ 3 ^ 2 ^ 4 ^ 4等价于 2 ^ 2 ^ 4 ^ 4 ^ 3 => 0 ^ 0 ^3 => 3
+     * <p>
+     * 时间复杂度：O(n)
+     * 空间复杂度:O(1)
      */
     public static int singleNumber(int[] nums) {
         int temp = 0;
