@@ -53,9 +53,9 @@ public class AddBinary {
 
             int sum = n1 + n2 + carry;
 
-            carry = sum / 2;//计算余数
+            carry = sum / 2;//计算进位
 
-            sb.append(sum % 2);
+            sb.append(sum % 2);//计算余数
             i--;
             j--;
         }
