@@ -12,7 +12,7 @@ import java.util.List;
  * Date:    2020/12/4 10:02
  * Description:
  * 151-翻转字符串的单词{@link medium.str.ReverseWords}
- * 344-翻转字符串{@link simple.str.ReverseString}
+ * 344-反转字符串{@link simple.str.ReverseString}
  * 387-字符串中的第一个唯一字符{@link simple.str.FirstUniqChar}
  */
 

@@ -29,7 +29,7 @@ public class MergeTwoLists {
      */
     public ListNode mergeTwoListSolution1(ListNode l1, ListNode l2) {
 
-        //判断有链表是否为空，如果为空，那么就链接另一个
+        //判断有链表是否为空，如果为空，那么就连接另一个
         if (l1 == null) {
             return l2;
         }
@@ -38,10 +38,13 @@ public class MergeTwoLists {
         }
 
         if (l2.val > l1.val) {
+            //同时计算下一个需要连接的节点
             l1.next = mergeTwoListSolution1(l1.next, l2);
+            //谁小返回谁
             return l1;
         } else {
             l2.next = mergeTwoListSolution1(l1, l2.next);
+            //谁小返回谁
             return l2;
         }
     }
