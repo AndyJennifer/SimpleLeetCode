@@ -21,7 +21,7 @@ public class ReverseString2 {
     }
 
     /**
-     * 解题思路：{@link ReverseString2}
+     * 解题思路：{@link ReverseString}
      */
     public static void reverseString(String s) {
         String[] str = s.split(" ");
