@@ -6,6 +6,12 @@ package domain.tree;
  * Description:
  */
 
+
+/**
+ * 树的遍历方式总体分为两类：深度优先搜索（DFS）、广度优先搜索（BFS）；
+ * 常见的 DFS ： 先序遍历、中序遍历、后序遍历；
+ * 常见的 BFS ： 层序遍历（即按层遍历）。
+ */
 public class Tree {
 
     private TreeNode root;
@@ -21,6 +27,7 @@ public class Tree {
             } else {
                 current = current.right;//反之遍历当前节点的右节点
             }
+            //如果当前节点为空，直接返回
             if (current == null) {
                 return null;
             }
