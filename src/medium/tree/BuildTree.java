@@ -58,10 +58,11 @@ public class BuildTree {
         if (preLeft > preRight || inLeft > inRight) {
             return null;
         }
+        //前序遍历的的第一个节点为根节点
         TreeNode root = new TreeNode(preOrder[preLeft]);
         int index = map.get(root.val);
-
         root.left = buildTree(preOrder, preLeft + 1, index - inLeft + preLeft, map, inLeft, index - 1);
+
         root.right = buildTree(preOrder, index - inLeft + preLeft + 1, preRight, map, index + 1, inRight);
         return root;
     }

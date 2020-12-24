@@ -11,6 +11,7 @@ import domain.tree.TreeNode;
  * Author:  andy.xwt
  * Date:    2020/12/17 16:21
  * Description:二叉树的层序遍历
+ * 与二叉树的层序遍历2{@link  simple.tree.LevelOrderBottom}解法类似
  * 给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
  */
 
@@ -18,6 +19,7 @@ import domain.tree.TreeNode;
 public class LevelOrder {
 
     /**
+     * 解法：广度优先
      * 时间复杂度:O(n)遍历整个二叉树
      * 空间复杂度:O(n)
      */
@@ -36,7 +38,8 @@ public class LevelOrder {
             List<Integer> list = new ArrayList<>();
 
             //获取当前层级有多少个节点
-            for (int i = 0; i < queue.size(); i++) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
 
                 //添加当层节点的数据
                 TreeNode node = queue.poll();

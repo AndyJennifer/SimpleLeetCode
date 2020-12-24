@@ -36,8 +36,8 @@ class Day24 {
         while (!deque.isEmpty()) {
 
             List<Integer> res = new ArrayList<>();
-            for (int i = 0; i < deque.size(); i++) {
-
+            int size = deque.size();
+            for (int i = 0; i < size; i++) {
                 TreeNode node = deque.poll();
 
                 if (node.left != null) {
@@ -78,7 +78,8 @@ class Day24 {
         deque.offer(root);
 
         while (!deque.isEmpty()) {
-            for (int i = 0; i < deque.size(); i++) {
+            int size = deque.size();
+            for (int i = 0; i < size; i++) {
 
                 TreeNode node = deque.poll();
                 if (node.left != null) {

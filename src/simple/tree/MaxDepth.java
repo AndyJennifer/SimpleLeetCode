@@ -60,7 +60,8 @@ public class MaxDepth {
 
         while (!deque.isEmpty()) {
 
-            for (int i = 0; i < deque.size(); i++) {
+            int size = deque.size();
+            for (int i = 0; i < size; i++) {
                 //一层一层的遍历
                 TreeNode node = deque.poll();
                 if (node.left != null) {
