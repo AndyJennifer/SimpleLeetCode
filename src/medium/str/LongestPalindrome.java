@@ -41,6 +41,8 @@ public class LongestPalindrome {
         //枚举所有长度大于1的子串 charArray[i..j]
         for (int i = 0; i < len - 1; i++) {
             for (int j = i + 1; j < len; j++) {
+                //j - i + 1 > maxLen
+                //如果说当前长度没有之前最大回文子串的长度长，那就没有必要判断了。直接跳过就行了。
                 if (j - i + 1 > maxLen && validPalindromic(charArray, i, j)) {
                     maxLen = j - i + 1;
                     begin = i;
@@ -105,11 +107,10 @@ public class LongestPalindrome {
 
     /**
      * 假定 left 为中间位置向两边扩散
-     * <p>
      * a        b       b       a
-     * left right
+     *          left right
      * a         b           a
-     * left right
+     *       left right
      */
     private static int expandAroundCenter(char[] charArray, int left, int right) {
         //当left = right 的时候，回文中心是一个字符，回文串的长度是奇数

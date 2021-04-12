@@ -19,42 +19,65 @@ class Day10 {
     // 斐波那契数
     ///////////////////////////////////////////////////////////////////////////
 
-    public int fibSolution1(int N) {
-        if (N <= 1) {
-            return N;
+    public int fibSolution1(int n) {
+        if (1 <= n) {
+            return n;
         }
-        return fibSolution1(N - 1) + fibSolution1(N - 2);
+        return fibSolution1(n - 1) + fibSolution2(n - 2);
     }
 
-    public int fibSolution2(int N) {
-        if (N <= 1) {
-            return N;
-        }
-        int[] a = new int[N];
-        a[1] = 1;
-
-        for (int i = 2; i <= N; i++) {
-            a[i] = a[i - 1] + a[i - 2];
-        }
-        return a[N];
+    public int fibSolution2(int n) {
+        int[] memo = new int[n + 1];
+        return helper(memo, n);
     }
 
-    public int fibSolution3(int N) {
-        if (N <= 1) {
-            return N;
+    public int helper(int[] memo, int n) {
+        if (n <= 1) {
+            return n;
         }
-        if (N == 2) {
-            return 1;
+        if (memo[n] != 0) {
+            return memo[n];
+        }
+        memo[n] = helper(memo, n - 1) + helper(memo, n - 2);
+        return memo[n];
+    }
+
+    /**
+     * 解法3：备忘录模式，自顶向上
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(N)
+     */
+    public int fibSolution3(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        //dp数组
+        int[] dp = new int[n + 1];
+
+        //baseCase
+        dp[0] = 0;
+        dp[1] = 1;
+
+        //状态转移方程
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n];
+    }
+
+
+    public int fibSolution4(int n) {
+        if (n <= 1) {
+            return n;
         }
         int result = 0;
-        int pre1 = 1;
+        int pre1 = 0;
         int pre2 = 1;
 
-        for (int i = 3; i <= N; i++) {
+        for (int i = 2; i <= n; i++) {
             result = pre1 + pre2;
             pre1 = pre2;
             pre2 = result;
-
         }
         return result;
     }

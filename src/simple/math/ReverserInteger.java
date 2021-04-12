@@ -36,7 +36,7 @@ public class ReverserInteger {
         while (x != 0) {
             int pop = x % 10;//上次的余数*10+现在的余数 为颠倒后的数 使用long 就不会怕越界
             x = x / 10;//while循环能走几次，代表数有多少位。
-            //7或8是因为最大值2的31次方是2147483648，最小值负2的31次方减一是-2147483647，这两个数值的个位数是7和8.
+            //7或8是因为最大值2的31次方减一是2147483647，最小值负2的31次方是-2147483648，这两个数值的个位数是7和8.
             if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7))
                 return 0;
             if (rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && pop < -8))

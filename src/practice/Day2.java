@@ -91,7 +91,7 @@ class Day2 {
 
     private static int reverse(int x) {
         int rev = 0;
-        while (x > 0) {
+        while (x != 0) {
             int pop = x % 10;
             x = x / 10;
             if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)) {
@@ -114,6 +114,7 @@ class Day2 {
         if (x < 0 || x % 10 == 0 && x != 0) {
             return false;
         }
+
         int revertNumber = 0;
         while (x > revertNumber) {
             revertNumber = revertNumber * 10 + x % 10;
