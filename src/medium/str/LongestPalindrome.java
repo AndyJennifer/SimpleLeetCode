@@ -5,7 +5,7 @@ package medium.str;
  * Date:    2020/10/11 15:58
  * Description:最长回文子串
  * <p>
- * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+ * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
  * <p>
  * 示例 1：
  * <p>
@@ -143,6 +143,7 @@ public class LongestPalindrome {
             return "";
         }
         int len = s.length();
+        //这里maxLen 取1是因为如果取到最后一位j时，还不是回文，那么一定要大于1
         int maxLen = 1;
         //用于记录最长回文子串的初始下标
         int begin = 0;

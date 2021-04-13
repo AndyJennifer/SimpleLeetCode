@@ -16,8 +16,7 @@ class Day2 {
     // 最长回文子串
     ///////////////////////////////////////////////////////////////////////////
 
-
-    public static String longestPalindromeSolution1(String s) {
+    public String longestPalindromeSolution1(String s) {
         if (s == null || s.length() < 1) {
             return "";
         }
@@ -40,7 +39,7 @@ class Day2 {
 
     }
 
-    public static boolean validPalindromic(char[] charArray, int left, int right) {
+    public boolean validPalindromic(char[] charArray, int left, int right) {
         while (left < right) {
             if (charArray[left] != charArray[right]) {
                 return false;
@@ -51,7 +50,7 @@ class Day2 {
         return true;
     }
 
-    public static String longestPalindromeSolution2(String s) {
+    public String longestPalindromeSolution2(String s) {
         if (s == null || s.length() < 1) {
             return "";
         }
@@ -83,6 +82,47 @@ class Day2 {
             }
         }
         return j - i + 1;
+    }
+
+    public String longestPalindromeSolution3(String s) {
+        if (s == null || s.length() < 1) {
+            return "";
+        }
+
+        //定义dp数组
+        int len = s.length();
+        boolean[][] dp = new boolean[len][len];
+
+        //base case 单个字符肯定是回文串
+        for (int i = 0; i < len; i++) {
+            dp[i][i] = true;
+        }
+
+
+        int begin = 0;
+        int max = 1;
+        char[] array = s.toCharArray();
+        for (int j = 1; j < len; j++) {
+            for (int i = 0; i < j; i++) {
+                //如果头尾不相等，那么一定不是回文串
+                if (array[i] != array[j]) {
+                    dp[i][j] = false;
+                } else {
+                    //如果头尾相等，并且长度为3，那么一定是回文串
+                    if (j - i < 3) {
+                        dp[i][j] = true;
+                    } else {
+                        dp[i][j] = dp[i + 1][j - 1];
+                    }
+                }
+                if (dp[i][j] && j - i + 1 > max) {
+                    max = j - i + 1;
+                    begin = i;
+                }
+            }
+        }
+
+        return s.substring(begin, max);
     }
 
     ///////////////////////////////////////////////////////////////////////////
