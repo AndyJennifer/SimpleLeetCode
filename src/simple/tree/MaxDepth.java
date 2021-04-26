@@ -23,9 +23,11 @@ public class MaxDepth {
 
 
     /**
-     * 树的遍历方式总体分为两类：深度优先搜索（DFS）、广度优先搜索（BFS）；
-     * 常见的 DFS ： 先序遍历、中序遍历、后序遍历；
-     * 常见的 BFS ： 层序遍历（即按层遍历）。
+     * 树的遍历方式总体分为两类：
+     * 深度优先搜索（Depth-First-search 简称DFS）、
+     * 广度优先搜索（Breadth-First-Search 简称BFS)）
+     * 常见的 DFS ： 先序遍历、中序遍历、后序遍历
+     * 常见的 BFS ： 层序遍历（即按层遍历）
      */
 
     /**
@@ -71,11 +73,31 @@ public class MaxDepth {
                     deque.offer(node.right);
                 }
             }
-
             res++;
         }
         return res;
     }
 
 
+    private int num = 0;
+    private int answer = 0;
+
+    public int kthSmallest(TreeNode root, int k) {
+        kthSolution(root, k);
+        return answer;
+    }
+
+    public void kthSolution(TreeNode root, int k) {
+        if (root == null) {
+            return;
+        }
+        kthSolution(root.left, k);
+        num++;
+        if (num == k) {
+            answer = root.val;
+            return;
+        }
+        kthSolution(root.right, k);
+
+    }
 }

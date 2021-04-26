@@ -13,7 +13,6 @@ import domain.tree.TreeNode;
  * Description: 二叉树展开为链表
  * 给定一个二叉树，原地将它展开为一个单链表。
  * <p>
- *  
  * <p>
  * 例如，给定二叉树
  * <p>
@@ -139,4 +138,34 @@ public class Flatten {
             cur = cur.right;
         }
     }
+
+    /**
+     * 解法4：后序遍历+递归
+     */
+    public void flattenSolution4(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        //拉平左右子树
+        flattenSolution4(root.left);
+        flattenSolution4(root.right);
+
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+
+        //把根节点的左节点置位null
+        root.left = null;
+        //让根节点的右节点指向左节点
+        root.right = left;
+
+        //找到根节点右子树的最右节点
+        TreeNode p = root.right;
+        while (p != null) {
+            p = p.right;
+        }
+        //将原右子树接到右子树最右节点
+        p.right = right;
+    }
+
 }

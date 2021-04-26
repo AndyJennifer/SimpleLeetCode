@@ -94,7 +94,26 @@ class Day27 {
 
             cur = cur.right;
         }
+    }
 
+
+    public void flattenSolution4(TreeNode root) {
+        if (root != null) {
+            flattenSolution4(root.left);
+            flattenSolution4(root.right);
+
+            TreeNode left = root.left;
+            TreeNode right = root.right;
+
+            root.left = null;
+            root.right = left;
+
+            TreeNode p = root.right;
+            while (p != null) {
+                p = p.right;
+            }
+            p.right = right;
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////

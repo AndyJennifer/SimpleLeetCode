@@ -7,7 +7,7 @@ import domain.tree.TreeNode;
 /**
  * Author:  andy.xwt
  * Date:    2020/12/21 10:51
- * Description:从中序与后序遍历序列构造二叉树
+ * Description:106-从中序与后序遍历序列构造二叉树
  * <p>
  * 根据一棵树的中序遍历与后序遍历构造二叉树。
  * <p>
@@ -16,7 +16,7 @@ import domain.tree.TreeNode;
  * <p>
  * 例如，给出
  * <p>
- * 中序遍历 inorder = [9,3,15,20,7]
+ * 中序遍历 inorder =[9,3,15,20,7]
  * 后序遍历 postorder = [9,15,7,20,3]
  * <p>
  * 来源：力扣（LeetCode）
