@@ -77,27 +77,4 @@ public class MaxDepth {
         }
         return res;
     }
-
-
-    private int num = 0;
-    private int answer = 0;
-
-    public int kthSmallest(TreeNode root, int k) {
-        kthSolution(root, k);
-        return answer;
-    }
-
-    public void kthSolution(TreeNode root, int k) {
-        if (root == null) {
-            return;
-        }
-        kthSolution(root.left, k);
-        num++;
-        if (num == k) {
-            answer = root.val;
-            return;
-        }
-        kthSolution(root.right, k);
-
-    }
 }
