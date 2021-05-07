@@ -11,7 +11,7 @@ import domain.tree.TreeNode;
 /**
  * Author:  andy.xwt
  * Date:    2021/1/11 17:59
- * Description:二叉树的后序遍历
+ * Description:145-二叉树的后序遍历
  * <p>
  * 给定一个二叉树，返回它的 后序 遍历。
  */
@@ -59,14 +59,14 @@ public class PostorderTraversal {
                 node = node.left;
             }
 
+            //获取当前根节点
             node = stack.pop();
 
-            //如果node.right==null添加左右节点，如果node.right=pre，则添加根节点
+            //如果node.right==null添加当前节点的左右节点，如果node.right=pre，则添加根节点
             if (node.right == null || node.right == pre) {
                 list.add(node.val);
                 pre = node;
-                node = null;//置为null,方便跳出第二个for循环。
-
+                node = null;//置为null,方便跳出第二个while循环。
             } else {
                 //如果当前节点，还存在右节点，继续把当前节点压栈，遍历其右节点
                 stack.push(node);

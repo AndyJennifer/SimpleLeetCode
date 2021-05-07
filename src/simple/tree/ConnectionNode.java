@@ -28,7 +28,7 @@ import domain.Node;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class ConnectionNode {
+public class ConnectionNode {
 
     /**
      * 解法1：广度优先

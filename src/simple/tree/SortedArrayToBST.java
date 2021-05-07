@@ -5,11 +5,11 @@ import domain.tree.TreeNode;
 /**
  * Author:  andy.xwt
  * Date:    2020/12/23 21:11
- * Description:将有序数组转换为二叉搜索树
+ * Description:108-将有序数组转换为二叉搜索树
  * <p>
  * 将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。
  * <p>
- * 本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。
+ * 本题中，一个高度平衡二叉树是指一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1。
  * <p>
  * 示例:
  * <p>
@@ -23,14 +23,13 @@ public class SortedArrayToBST {
 
     /**
      * 解法：https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-33/
-     * 思路：二叉树的中序遍历，就是数组的升序
+     * 思路：函数前序遍历构造二叉树，数组通过中序访问
      * 时间复杂度:O(n)
      * 空间复杂度:O(logn)
      */
     public TreeNode sortedArrayToBSTSolution(int[] nums) {
         return buildTree1(nums, 0, nums.length - 1);
 //        return buildTree2(nums, 0, nums.length - 1);
-//        return buildTree3(nums, 0, nums.length - 1);
     }
 
     private TreeNode buildTree1(int[] nums, int left, int right) {

@@ -10,7 +10,7 @@ import domain.tree.TreeNode;
  * 翻转一棵二叉树。
  */
 
-class InvertTree {
+public class InvertTree {
 
     /**
      * 解法1：前序遍历

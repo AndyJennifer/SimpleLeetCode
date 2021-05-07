@@ -18,7 +18,7 @@ import domain.tree.TreeNode;
  * 两棵树重复是指它们具有相同的结构以及相同的结点值。
  */
 
-class FindDuplicateSubTree {
+public class FindDuplicateSubTree {
 
     /**
      * 解法：

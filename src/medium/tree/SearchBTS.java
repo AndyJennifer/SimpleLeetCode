@@ -11,7 +11,7 @@ import domain.tree.TreeNode;
  * 返回以该节点为根的子树。 如果节点不存在，则返回 NULL。
  */
 
-class SearchBTS {
+public class SearchBTS {
 
     /**
      * 解法1：利用二叉搜索树的特性，判断左右，递归

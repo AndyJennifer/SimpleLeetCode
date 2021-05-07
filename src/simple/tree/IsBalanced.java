@@ -5,7 +5,7 @@ import domain.tree.TreeNode;
 /**
  * Author:  andy.xwt
  * Date:    2020/12/24 15:05
- * Description: 平衡二叉树
+ * Description: 98-平衡二叉树
  * <p>
  * 给定一个二叉树，判断它是否是高度平衡的二叉树。
  * <p>

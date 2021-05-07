@@ -1,4 +1,4 @@
-package simple.tree;
+package medium.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,7 +10,7 @@ import domain.tree.TreeNode;
 /**
  * Author:  andy.xwt
  * Date:    2020/12/22 20:54
- * Description: 二叉树的层序遍历2
+ * Description: 107-二叉树的层序遍历2
  * 与二叉树的层序遍历1{@link  medium.tree.LevelOrder}解法类似
  * 给定一个二叉树，返回其节点值自底向上的层序遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
  */
@@ -39,8 +39,9 @@ public class LevelOrderBottom {
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 list.add(node.val);
+
                 if (node.left != null) {
-                    queue.offer(node.right);
+                    queue.offer(node.left);
                 }
                 if (node.right != null) {
                     queue.offer(node.right);

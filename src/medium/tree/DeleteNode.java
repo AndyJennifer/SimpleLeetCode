@@ -19,7 +19,7 @@ import domain.tree.TreeNode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-class DeleteNode {
+public class DeleteNode {
 
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) {
@@ -34,14 +34,14 @@ class DeleteNode {
             if (root.left == null) {
                 return root.right;
             }
-
-            //如果有两个节点，那么久获取右子树的最小节点
+            //如果有两个节点，那么就获取右子树的最小节点
             TreeNode min = getMin(root.right);
-            //替换值
+
+            //将当前节点的值替换为最小节点的值
             root.val = min.val;
 
             //然后把最小节点删除
-            root.right = deleteNode(root.right, key);
+            root.right = deleteNode(root.right, min.val);
         }
 
         if (root.val > key) {

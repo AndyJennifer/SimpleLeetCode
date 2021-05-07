@@ -11,13 +11,13 @@ import domain.tree.TreeNode;
 /**
  * Author:  andy.xwt
  * Date:    2021/1/11 17:19
- * Description:二叉树的前序遍历
+ * Description:144-二叉树的前序遍历
  * <p>
  * 给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
  */
 
 
-public  class PreorderTraversal {
+public class PreorderTraversal {
 
     /**
      * 思路：前序遍历递归，{@link Tree#preOrder(TreeNode)} }

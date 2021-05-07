@@ -8,7 +8,7 @@ import domain.tree.TreeNode;
 /**
  * Author:  andy.xwt
  * Date:    2020/12/16 11:05
- * Description:对称二叉树
+ * Description:101-对称二叉树
  * 给定一个二叉树，检查它是否是镜像对称的。
  * 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
  */

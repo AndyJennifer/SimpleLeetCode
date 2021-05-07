@@ -8,13 +8,14 @@ import java.util.Map;
 import java.util.Queue;
 
 import domain.tree.TreeNode;
+import medium.tree.LevelOrderBottom;
 
 /**
  * Author:  andy.xwt
  * Date:    2020/12/21 10:31
  * Description:
  * 106-从中序与后序遍历序列构造二叉树{@link medium.tree.BuildTree2}
- * 107-二叉树的层次遍历2{@link simple.tree.LevelOrderBottom}
+ * 107-二叉树的层次遍历2{@link LevelOrderBottom}
  * 108-将有序数组转换为二叉搜索树{@link simple.tree.SortedArrayToBST}
  */
 
