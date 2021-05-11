@@ -107,6 +107,9 @@ public class IsSameTree {
             TreeNode right2 = n2.right;
 
             //如果有一个节点为空，返回false
+            //使用广度遍历的时候，要考虑特殊情况，
+            // 比如节点A左子树不为空，右子树为空，
+            // 比如节点B左子树为空，右子树不为空，
             if (left1 == null ^ left2 == null) {
                 return false;
             }

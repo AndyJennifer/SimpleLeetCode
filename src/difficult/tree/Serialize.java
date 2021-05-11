@@ -15,7 +15,7 @@ import domain.tree.TreeNode;
  * <p>
  * 请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
  * <p>
- * 提示: 输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+ * 提示: 输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
  * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree
@@ -114,7 +114,7 @@ public class Serialize {
             return null;
         }
         TreeNode root = new TreeNode(Integer.parseInt(s));
-        //因为是后序遍历，所以需要先构造右节点
+        //因为是后序遍历，所以需要先构造右节点,因为通过removeLast 获取节点的顺序是根右左
         root.right = deserializeHelp2(nodes);
         root.left = deserializeHelp2(nodes);
         return root;
@@ -156,7 +156,12 @@ public class Serialize {
         }
 
         String[] split = data.split(SEP);
-        TreeNode root = new TreeNode(Integer.parseInt(split[0]));
+        String rootValue = split[0];
+        if (rootValue.equals(NULL)) {
+            return null;
+        }
+
+        TreeNode root = new TreeNode(Integer.parseInt(rootValue));
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
@@ -164,9 +169,9 @@ public class Serialize {
 
             //队列中存储的都是父节点
             TreeNode node = queue.poll();
-            String left = split[i++];
 
             //父节点，左节点的值
+            String left = split[i++];
             if (!left.equals(NULL)) {
                 node.left = new TreeNode(Integer.parseInt(left));
                 queue.offer(node.left);

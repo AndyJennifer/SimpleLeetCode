@@ -69,7 +69,7 @@ public class IsSymmetric {
             TreeNode n1 = queue.poll();
             TreeNode n2 = queue.poll();
 
-            //当节点为空的时候跳出循环
+            //当节点为空的时候跳出当前循环，执行下一次循环
             if (n1 == null && n2 == null) {
                 continue;
             }
@@ -87,7 +87,7 @@ public class IsSymmetric {
             queue.offer(n2.right);
 
             queue.offer(n1.right);
-            queue.offer(n2.right);
+            queue.offer(n2.left);
         }
 
         return true;

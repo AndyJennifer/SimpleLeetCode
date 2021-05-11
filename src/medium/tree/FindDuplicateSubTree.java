@@ -36,7 +36,7 @@ public class FindDuplicateSubTree {
             return "#";
         }
         //前序遍历，将二叉树序列化。
-        String serTree = root.val + "." + getList(map, list, root.left) + getList(map, list, root.right);
+        String serTree = root.val + "." + getList(map, list, root.left) + "." + getList(map, list, root.right);
         //获取重复的子树
         map.put(serTree, map.getOrDefault(serTree, 0) + 1);
         if (map.get(serTree) == 2) {

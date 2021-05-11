@@ -160,11 +160,11 @@ public class Flatten {
         root.right = left;
 
         //找到根节点右子树的最右节点
-        TreeNode p = root.right;
+        TreeNode p = root;
         while (p != null) {
             p = p.right;
         }
-        //将原右子树接到右子树最右节点
+        //将原右子树接到d=当前右子树最右节点
         p.right = right;
     }
 

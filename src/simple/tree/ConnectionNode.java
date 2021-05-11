@@ -33,7 +33,7 @@ public class ConnectionNode {
     /**
      * 解法1：广度优先
      */
-    public Node solution1(Node root) {
+    public Node connectionNodeSolution1(Node root) {
         if (root == null) {
             return null;
         }
@@ -63,7 +63,7 @@ public class ConnectionNode {
     }
 
 
-    public Node solution2(Node root) {
+    public Node connectionNodeSolution2(Node root) {
         if (root == null) {
             return null;
         }
@@ -91,7 +91,7 @@ public class ConnectionNode {
     /**
      * 解法2:深度优先
      */
-    public Node solution3(Node root) {
+    public Node connectionNodeSolution3(Node root) {
         if (root == null || root.left == null) {
             return null;
         }
@@ -101,8 +101,8 @@ public class ConnectionNode {
         //获取上个节点的next节点，连接跨越父节点的两个子节点
         root.right.next = root.next == null ? null : root.next.left;
 
-        solution3(root.left);
-        solution3(root.right);
+        connectionNodeSolution3(root.left);
+        connectionNodeSolution3(root.right);
 
         return root;
     }

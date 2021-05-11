@@ -22,7 +22,6 @@ import domain.tree.TreeNode;
  * 98-验证二叉搜索树{@link medium.tree.IsValidBST}
  * 700-二叉搜索树中的搜索{@link medium.tree.SearchBTS}
  * 701-二叉搜索树中的插入操作{@link medium.tree.InsertIntoBTS}
- * 108-将有序数组转换为二叉搜索树{@link simple.tree.SortedArrayToBST}
  * 450-删除二叉搜索树中的节点{@link medium.tree.DeleteNode}
  */
 
@@ -209,40 +208,6 @@ class Day2 {
         return root;
     }
 
-
-    ///////////////////////////////////////////////////////////////////////////
-    // 将有序数组转换为二叉搜索树
-    ///////////////////////////////////////////////////////////////////////////
-    public TreeNode sortedArrayToBSTSolution1(int[] nums) {
-        return buildTree1(nums, 0, nums.length);
-    }
-
-    public TreeNode buildTree1(int[] nums, int left, int right) {
-        if (left > right) {
-            return null;
-        }
-        int middle = (left + right) / 2;
-        TreeNode root = new TreeNode(nums[middle]);
-        root.left = buildTree1(nums, left, middle - 1);
-        root.right = buildTree1(nums, middle + 1, right);
-        return root;
-    }
-
-
-    public TreeNode sortedArrayToBSTSolution2(int[] nums) {
-        return buildTree2(nums, 0, nums.length);
-    }
-
-    public TreeNode buildTree2(int[] nums, int left, int right) {
-        if (left > right) {
-            return null;
-        }
-        int middle = (left + right) / 2;
-        TreeNode root = new TreeNode(nums[middle]);
-        root.left = buildTree1(nums, left, middle - 1);
-        root.right = buildTree1(nums, middle + 1, right);
-        return root;
-    }
 
     ///////////////////////////////////////////////////////////////////////////
     // 删除二叉搜索树中的节点

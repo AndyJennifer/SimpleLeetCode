@@ -263,7 +263,7 @@ class Day1 {
         int leftLength = minDepth1(root.left);
         int rightLength = minDepth1(root.right);
 
-        return (leftLength == 0 || rightLength == 0) ? 1 : Math.min(leftLength, rightLength) + 1;
+        return (leftLength == 0 || rightLength == 0) ? leftLength + rightLength + 1 : Math.min(leftLength, rightLength) + 1;
     }
 
     public int minDepth2(TreeNode root) {
