@@ -5,7 +5,7 @@ import domain.ListNode;
 /**
  * Author:  andy.xwt
  * Date:    2020/11/24 18:26
- * Description:移除链表元素
+ * Description:203-移除链表元素
  * 删除链表中等于给定值 val 的所有节点。
  * <p>
  * 示例:
@@ -24,8 +24,7 @@ public class RemoveElements {
      */
     public ListNode removeElements(ListNode head, int val) {
 
-        ListNode dumpyHead = new ListNode();
-        dumpyHead.next = head;
+        ListNode dumpyHead = new ListNode(-1, head);
 
         ListNode pre = dumpyHead;
         ListNode cur = head;

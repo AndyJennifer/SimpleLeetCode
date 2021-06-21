@@ -14,11 +14,20 @@ public class ReversePrintListNode {
     /**
      * 逆序打印链表
      */
-    private void printListNode(ListNode head) {
+    private static void printListNode(ListNode head) {
         if (head == null) {
             return;
         }
-        printListNode(head);
+        printListNode(head.next);
         System.out.println(head.val);
+    }
+
+    public static void main(String[] args) {
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        n1.next = n2;
+        n2.next = n3;
+        printListNode(n1);
     }
 }

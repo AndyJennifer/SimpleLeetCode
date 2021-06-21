@@ -5,37 +5,32 @@ import domain.ListNode;
 /**
  * Author:  andy.xwt
  * Date:    2019-04-11 22:25
- * Description: 删除链表中的节点
- * 请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。
+ * Description:剑指offer18-删除链表中的节点
  * <p>
- * 现有一个链表 -- head = [4,5,1,9]，它可以表示为:
- *
+ * 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
+ * <p>
+ * 返回删除后的链表的头节点。
+ * <p>
+ * 注意：此题对比原题有改动
  * <p>
  * 示例 1:
  * <p>
- * 输入: head = [4,5,1,9], node = 5
+ * 输入: head = [4,5,1,9], val = 5
  * 输出: [4,1,9]
  * 解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
  * 示例 2:
  * <p>
- * 输入: head = [4,5,1,9], node = 1
+ * 输入: head = [4,5,1,9], val = 1
  * 输出: [4,5,9]
  * 解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
- * <p>
- * <p>
- * 说明:
- * <p>
- * 链表至少包含两个节点。
- * 链表中所有节点的值都是唯一的。
- * 给定的节点为非末尾节点并且一定是链表中的一个有效节点。
- * 不要从你的函数中返回任何结果。
  */
 
 public class DeleteNode {
 
     public static void main(String[] args) {
-        ListNode listNode = ListNode.createList(new int[]{4, 5, 1, 9});
-        deleteNode(new ListNode(5));
+        ListNode listNode = ListNode.createList(new int[]{4, 5, 1, 1, 9});
+        ListNode.printList(deleteNode(listNode, 1));
+
     }
 
     /**
@@ -45,12 +40,24 @@ public class DeleteNode {
      * 相反，我们必须将想要删除的节点的值替换为它后面节点中的值，然后删除它之后的节点。
      * 因为我们知道要删除的节点不是列表的末尾，所以我们可以保证这种方法是可行的。
      */
-    public static void deleteNode(ListNode node) {
-        //将当前要删除的节点的值，修改为当前节点的下一节点的值
-        node.val = node.next.val;
-        //将当前要删除的next节点，执行当前节点的下下节点。
-        node.next = node.next.next;
-    }
+    public static ListNode deleteNode(ListNode head, int val) {
+        ListNode dumpyHead = new ListNode(-1, head);
 
+        ListNode pre = dumpyHead;
+        ListNode cur = head;
+
+        while (cur != null) {
+            if (cur.val == val) {
+                //如果值相等，那么久把该节点的上个节点的next指向该节点的next节点
+                pre.next = cur.next;
+            } else {
+                //记录上一个指针
+                pre = cur;
+            }
+            cur = cur.next;
+
+        }
+        return dumpyHead.next;
+    }
 
 }

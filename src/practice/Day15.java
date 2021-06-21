@@ -9,9 +9,9 @@ import domain.ListNode;
  * Author:  andy.xwt
  * Date:    2020/11/25 22:29
  * Description:
- * 206-翻转链表{@link simple.link.ReverseList}
+ * 206-反转链表{@link simple.link.ReverseList}
  * 234-回文链表{@link medium.link.IsPalindrome}
- * 234-移除链表元素{@link simple.link.DeleteNode}
+ * 剑指offer18-删除链表中的节点{@link simple.link.DeleteNode}
  */
 
 
@@ -147,9 +147,23 @@ class Day15 {
     ///////////////////////////////////////////////////////////////////////////
     // 移除链表元素
     ///////////////////////////////////////////////////////////////////////////
-    public void deleteNode(ListNode node) {
-        node.val = node.next.val;
-        node.next = node.next.next;
+    public static ListNode deleteNode(ListNode head, int val) {
+        ListNode dumpyHead = new ListNode(-1, head);
+
+        ListNode pre = dumpyHead;
+        ListNode cur = head;
+
+        while (cur != null) {
+            if (cur.val == val) {
+                pre.next = cur.next;
+            } else {
+                //记录上一个指针
+                pre = cur;
+            }
+            cur = cur.next;
+
+        }
+        return dumpyHead.next;
     }
 
 }

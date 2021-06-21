@@ -6,18 +6,18 @@ import domain.ListNode;
  * Author:  andy.xwt
  * Date:    2020/11/16 23:12
  * Description:K 个一组翻转链表
- * 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
+ * 给你一个链表，每k个节点一组进行翻转，请你返回翻转后的链表。
  * <p>
- * k 是一个正整数，它的值小于或等于链表的长度。
+ * k是一个正整数，它的值小于或等于链表的长度。
  * <p>
- * 如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+ * 如果节点总数不是k的整数倍，那么请将最后剩余的节点保持原有顺序。
  * 示例：
  * <p>
  * 给你这个链表：1->2->3->4->5
  * <p>
- * 当 k = 2 时，应当返回: 2->1->4->3->5
+ * 当k= 2 时，应当返回: 2->1->4->3->5
  * <p>
- * 当 k = 3 时，应当返回: 3->2->1->4->5
+ * 当k= 3 时，应当返回: 3->2->1->4->5
  * <p>
  * 说明：
  * <p>
@@ -44,14 +44,14 @@ public class ReverseKGroup {
 
         while (head != null) {
 
-            //默认在头节点
+            //尾节点默认指向头节点
             ListNode tail = pre;
 
             //判断剩余部分长度是否大于k
             for (int i = 0; i < k; i++) {
                 tail = tail.next;
 
-                //如果长度不够直接返回
+                //如果长度不够，说明链表长度不满足k个一组，直接返回
                 if (tail == null) {
                     return hair.next;
                 }
@@ -81,13 +81,14 @@ public class ReverseKGroup {
     }
 
     /**
-     * 翻转链表并返回新链表的头尾节点
+     * 反转两个节点之间的链表，并同时返回头尾节点
      * 头节点ListNode[0]
      * 尾节点ListNode[1]
      */
     private ListNode[] myReverse(ListNode head, ListNode tail) {
         ListNode prev = tail.next;
         ListNode cur = head;
+
         while (prev != tail) {
             ListNode temp = cur.next;
             cur.next = prev;

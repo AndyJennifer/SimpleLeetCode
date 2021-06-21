@@ -24,14 +24,14 @@ class Day11 {
     ///////////////////////////////////////////////////////////////////////////
 
     public ListNode removeNthFromEndSolution1(ListNode head, int n) {
-
+        ListNode dumpy = new ListNode(-1, head);
         int length = getLength(head);
         ListNode cur = head;
-        for (int i = 0; i < length - n; i++) {
+        for (int i = 1; i < length - n; i++) {
             cur = cur.next;
         }
         cur.next = cur.next.next;
-        return cur;
+        return dumpy.next;
 
 
     }
@@ -47,8 +47,9 @@ class Day11 {
     }
 
     public ListNode removeNthFromEndSolution2(ListNode head, int n) {
+        ListNode dump = new ListNode(-1, head);
         ListNode first = head;
-        ListNode second = head;
+        ListNode second = dump;
 
         for (int i = 0; i < n; i++) {
             first = first.next;
@@ -57,9 +58,8 @@ class Day11 {
             first = first.next;
             second = second.next;
         }
-
         second.next = second.next.next;
-        return second;
+        return dump.next;
     }
 
     public ListNode removeNthFromEndSolution3(ListNode head, int n) {

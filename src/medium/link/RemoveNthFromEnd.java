@@ -8,9 +8,9 @@ import domain.ListNode;
 /**
  * Author:  andy.xwt
  * Date:    2020/11/13 14:12
- * Description:删除链表的倒数第N个节点
+ * Description:19-删除链表的倒数第N个节点
  * <p>
- * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
+ * 给定一个链表，删除链表的倒数第n个节点，并且返回链表的头结点。
  * <p>
  * 示例：
  * <p>
@@ -19,7 +19,7 @@ import domain.ListNode;
  * 当删除了倒数第二个节点后，链表变为 1->2->3->5.
  * 说明：
  * <p>
- * 给定的 n 保证是有效的。
+ * 给定的 n保证是有效的。
  * <p>
  * 进阶：
  * <p>
@@ -40,16 +40,18 @@ public class RemoveNthFromEnd {
      * 空间复杂度:O(1)
      */
     public ListNode removeNthFromEndSolution1(ListNode head, int n) {
-        int length = getListNodeLength(head);
+        ListNode dumpy = new ListNode(-1, head);
         ListNode cur = head;
-        for (int i = 0; i < length - n; i++) {
+        int length = getListNodeLength(head);
+
+        //因为是要找到删除节点的前一位，所以i是从1开始，或者可以设置i = 0;i<length-n-1;i++
+        for (int i = 1; i < length - n; i++) {
             cur = cur.next;
         }
         //这时的cur 为 删除节点的前一个节点
         cur.next = cur.next.next;
-        return cur;
+        return dumpy.next;
     }
-
 
     /**
      * 获取链表的长度
@@ -76,7 +78,7 @@ public class RemoveNthFromEnd {
         for (int i = 0; i < n; i++) {
             deque.pop();
         }
-        //获取前置节点
+        //获取要删除节点的前置节点
         ListNode peek = deque.peek();
 
         peek.next = peek.next.next;
@@ -90,8 +92,11 @@ public class RemoveNthFromEnd {
      * 空间复杂度:O(1)
      */
     public ListNode removeNthFromEndSolution3(ListNode head, int n) {
+        ListNode dumpy = new ListNode(-1, head);
+
         ListNode first = head;
-        ListNode second = head;
+        ListNode second = dumpy;
+
         for (int i = 0; i < n; i++) {
             first = first.next;
         }
@@ -101,6 +106,6 @@ public class RemoveNthFromEnd {
         }
         second.next = second.next.next;
 
-        return second;
+        return dumpy.next;
     }
 }
