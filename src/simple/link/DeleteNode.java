@@ -48,7 +48,7 @@ public class DeleteNode {
 
         while (cur != null) {
             if (cur.val == val) {
-                //如果值相等，那么久把该节点的上个节点的next指向该节点的next节点
+                //如果值相等，那么就把该节点的上个节点的next指向该节点的next节点
                 pre.next = cur.next;
             } else {
                 //记录上一个指针

@@ -26,7 +26,7 @@ public class ReverseListN {
         ListNode node = reverseListN(head.next, n - 1);
         //将当前节点的下一个节点的next节点指向当前节点
         head.next.next = head;
-
+        //将当前节点的下一个节点指向pre;
         head.next = pre;
         return node;
     }
